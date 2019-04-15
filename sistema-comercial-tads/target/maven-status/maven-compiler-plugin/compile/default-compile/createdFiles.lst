@@ -1,0 +1,15 @@
+br/edu/ifg/sistemacomercial/util/JsfUtil.class
+br/edu/ifg/sistemacomercial/bean/UsuarioBean.class
+br/edu/ifg/sistemacomercial/entity/Usuario.class
+br/edu/ifg/sistemacomercial/bean/UsuarioBean$Status.class
+br/edu/ifg/sistemacomercial/entity/Categoria.class
+br/edu/ifg/sistemacomercial/util/FabricadeConexao.class
+br/edu/ifg/sistemacomercial/bean/ProdutoBean$Status.class
+br/edu/ifg/sistemacomercial/bean/CategoriaBean.class
+br/edu/ifg/sistemacomercial/dao/ProdutoDAO.class
+br/edu/ifg/sistemacomercial/bean/ProdutoBean.class
+br/edu/ifg/sistemacomercial/entity/Produto.class
+br/edu/ifg/sistemacomercial/bean/converter/CategoriaConverter.class
+br/edu/ifg/sistemacomercial/bean/CategoriaBean$Status.class
+br/edu/ifg/sistemacomercial/dao/UsuarioDAO.class
+br/edu/ifg/sistemacomercial/dao/CategoriaDAO.class

@@ -1,0 +1,12 @@
+/home/lizandra/NetBeansProjects/ifg_pw2_2019/sistema-comercial-tads/src/main/java/br/edu/ifg/sistemacomercial/bean/UsuarioBean.java
+/home/lizandra/NetBeansProjects/ifg_pw2_2019/sistema-comercial-tads/src/main/java/br/edu/ifg/sistemacomercial/util/JsfUtil.java
+/home/lizandra/NetBeansProjects/ifg_pw2_2019/sistema-comercial-tads/src/main/java/br/edu/ifg/sistemacomercial/entity/Produto.java
+/home/lizandra/NetBeansProjects/ifg_pw2_2019/sistema-comercial-tads/src/main/java/br/edu/ifg/sistemacomercial/dao/CategoriaDAO.java
+/home/lizandra/NetBeansProjects/ifg_pw2_2019/sistema-comercial-tads/src/main/java/br/edu/ifg/sistemacomercial/entity/Categoria.java
+/home/lizandra/NetBeansProjects/ifg_pw2_2019/sistema-comercial-tads/src/main/java/br/edu/ifg/sistemacomercial/bean/converter/CategoriaConverter.java
+/home/lizandra/NetBeansProjects/ifg_pw2_2019/sistema-comercial-tads/src/main/java/br/edu/ifg/sistemacomercial/bean/ProdutoBean.java
+/home/lizandra/NetBeansProjects/ifg_pw2_2019/sistema-comercial-tads/src/main/java/br/edu/ifg/sistemacomercial/dao/ProdutoDAO.java
+/home/lizandra/NetBeansProjects/ifg_pw2_2019/sistema-comercial-tads/src/main/java/br/edu/ifg/sistemacomercial/entity/Usuario.java
+/home/lizandra/NetBeansProjects/ifg_pw2_2019/sistema-comercial-tads/src/main/java/br/edu/ifg/sistemacomercial/bean/CategoriaBean.java
+/home/lizandra/NetBeansProjects/ifg_pw2_2019/sistema-comercial-tads/src/main/java/br/edu/ifg/sistemacomercial/util/FabricadeConexao.java
+/home/lizandra/NetBeansProjects/ifg_pw2_2019/sistema-comercial-tads/src/main/java/br/edu/ifg/sistemacomercial/dao/UsuarioDAO.java

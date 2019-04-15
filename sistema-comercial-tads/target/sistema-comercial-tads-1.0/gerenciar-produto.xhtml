@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Gerenciar produto</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            <p:menubar>
+                <p:submenu label="Cadastros">
+                    <p:menuitem value="Categoria" url="faces/gerenciar-categoria.xhtml"></p:menuitem>
+                    <p:menuitem value="Produto" url="faces/gerenciar-produto.xhtml"></p:menuitem>
+                </p:submenu>
+            </p:menubar>
+             
+             <h1> É de extrema necessidade cadastrar categoria primeiro, pois a categoria tem que se escolhida</h1>
+             
+            
+             <p:fieldset legend="Produto"> 
+                <p:toolbar>
+                    <p:toolbarGroup>
+                        <p:commandButton value="Novo" actionListener="#{produtoBean.novo()}"
+                                         update="@form"></p:commandButton>
+
+                        <p:commandButton value="Pesquisar" actionListener="#{produtoBean.pesquisar()}"
+                                         update="@form"></p:commandButton>
+
+                        <p:commandButton value="Salvar" actionListener="#{produtoBean.adicionarProduto()}"
+                                         update="@form" 
+                                         rendered="#{produtoBean.statusTela != 'PESQUISANDO'}"></p:commandButton>
+
+                    </p:toolbarGroup>
+                </p:toolbar>
+
+                <!-- Mensagem em linha em baixo da toolbar -->
+                <p:messages autoUpdate="true" showDetail="true"></p:messages>
+
+                <!-- Mensagem flutuante no canto superior direito -->
+                <p:growl autoUpdate="true" showDetail="true"></p:growl>
+
+                <p:panelGrid columns="2" styleClass="ui-noborder" 
+                             rendered="#{produtoBean.statusTela != 'PESQUISANDO'}">
+
+                    <p:outputLabel value="nome"></p:outputLabel>
+                    <p:inputText value="#{produtoBean.produto.nome}"></p:inputText>
+                    <p:outputLabel value="marca"></p:outputLabel>
+                    <p:inputText value="#{produtoBean.produto.marca}"></p:inputText>
+                    <p:outputLabel value="codigo barra "></p:outputLabel>
+                    <p:inputText value="#{produtoBean.produto.codigoBarras}"></p:inputText>
+                    <p:outputLabel value="unidade medida"></p:outputLabel>
+                    <p:inputText value="#{produtoBean.produto.unidadeMedida}"></p:inputText>
+                    <p:outputLabel value="Categoria" for="selectCategoria"></p:outputLabel>
+                    <p:selectOneMenu value="#{produtoBean.produto.categoria}" id="selectCategoria">
+                        <f:selectItem itemLabel="Selecione" itemValue=""></f:selectItem>
+                        <f:selectItems value="#{produtoBean.categorias}" var="cat" itemLabel="#{cat.nome}" itemValue="#{cat}"></f:selectItems>
+                    </p:selectOneMenu>
+
+                </p:panelGrid>
+
+                <p:dataTable value="#{produtoBean.produtos}" var="cat"
+                             rendered="#{produtoBean.statusTela == 'PESQUISANDO'}">
+
+                    <p:column headerText="ID">
+                        <h:outputText value="#{cat.id}"></h:outputText>
+                    </p:column>                    
+                    <p:column headerText="Nome">
+                        <h:outputText value="#{cat.nome}"></h:outputText>
+                    </p:column>
+                    
+                    <p:column headerText="Marca">
+                        <h:outputText value="#{cat.marca}"></h:outputText>
+                    </p:column>                    
+                    <p:column headerText="Codigo de barra">
+                        <h:outputText value="#{cat.codigoBarras}"></h:outputText>
+                    </p:column>
+                    
+                    <p:column headerText="Unidade de medida">
+                        <h:outputText value="#{cat.unidadeMedida}"></h:outputText>
+                    </p:column>                    
+                    <p:column headerText="Categoria">
+                        <h:outputText value="#{cat.categoria.nome}"></h:outputText>
+                    </p:column>                    
+                   
+                
+                    <p:column>
+                    <p:commandButton value="Delete" update="@form"
+                                     actionListener="#{produtoBean.remover(cat)}">
+                        <p:confirm header="Confirmação" message="Tem certeza que deseja apagar para sempre?" icon="fa fa-exclamation-triangle" />
+                    </p:commandButton>
+
+                    <p:commandButton value="Editar" update="@form"
+                                     actionListener="#{produtoBean.editar(cat)}"></p:commandButton>
+                    </p:column>
+                </p:dataTable>
+                <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                    <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="fa fa-trash-o" />
+                    <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="fa fa-undo" />
+                </p:confirmDialog> 
+            </p:fieldset>
+        </h:form>
+    </h:body>
+</html>
+
